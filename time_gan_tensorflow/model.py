@@ -3,7 +3,7 @@ import tensorflow as tf
 
 from time_gan_tensorflow.utils import time_series_to_sequences, sequences_to_time_series
 from time_gan_tensorflow.modules import encoder_embedder, encoder, decoder, generator_embedder, generator, discriminator, simulator
-from time_gan_tensorflow.losses import binary_crossentropy, mean_squared_error
+from time_gan_tensorflow.losses import binary_crossentropy, MeanSquaredError
 
 class TimeGAN():
     def __init__(self,
