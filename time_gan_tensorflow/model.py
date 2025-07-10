@@ -108,10 +108,10 @@ class TimeGAN():
                 p_hz = self.discriminator_model(hz)                              # log-odds of synthetic latent vector
 
                 # calculate the supervised loss
-                supervised_loss = mean_squared_error(hx[:, 1:, :], hx_hat[:, :-1, :])
+                supervised_loss = MeanSquaredError(hx[:, 1:, :], hx_hat[:, :-1, :])
                 
                 # calculate the autoencoder loss
-                autoencoder_loss = mean_squared_error(x, x_hat) + \
+                autoencoder_loss = MeanSquaredError(x, x_hat) + \
                                    self.lambda_param * supervised_loss
                                    
                 # calculate the generator loss
