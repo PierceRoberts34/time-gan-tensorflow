@@ -2,19 +2,18 @@ import tensorflow as tf
 
 @tf.function
 def mean_squared_error(y_true, y_pred):
-    '''
-    Mean squared error, used for calculating the supervised loss and the reconstruction loss.
-    '''
-    loss = tf.keras.losses.MeanSquaredError(y_true=tf.expand_dims(y_true, axis=-1), y_pred=tf.expand_dims(y_pred, axis=-1))
-    return tf.reduce_mean(tf.reduce_sum(loss, axis=-1))
+    """Mean squared error loss function."""
+    # Instantiate the loss function
+    mse = tf.keras.losses.MeanSquaredError()
+    # Call the loss function with y_true and y_pred
+    loss = mse(y_true, y_pred)
+    return loss
 
 
 @tf.function
 def binary_crossentropy(y_true, y_pred):
-    '''
-    Binary cross-entropy, used for calculating the unsupervised loss.
-    '''
-    loss = tf.keras.losses.binary_crossentropy(y_true=y_true, y_pred=y_pred, from_logits=True)
-    return tf.reduce_mean(loss)
-
+    """Binary crossentropy loss function."""
+    bce = tf.keras.losses.BinaryCrossentropy()
+    loss = bce(y_true, y_pred)
+    return loss
 
