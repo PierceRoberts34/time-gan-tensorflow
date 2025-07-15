@@ -7,7 +7,8 @@ def time_series_to_sequences(time_series, timesteps):
     last_index = len(time_series) - (len(time_series) % timesteps)
     sequences = np.array([
         time_series[t - timesteps: t] 
-        for t in range(timesteps, last_index + 1, timesteps)
+        for t in range(timesteps, last_index + 1, timesteps),
+        dtype="object"
     ])
     return sequences
 
