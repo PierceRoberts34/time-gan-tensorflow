@@ -4,7 +4,7 @@ def time_series_to_sequences(time_series, timesteps):
     '''
     Reshape the time series as overlapping sequences.
     '''
-    sequences = np.array([time_series[t - timesteps: t] for t in range(timesteps, len(time_series) + timesteps, timesteps)], dtype="object")
+    sequences = np.array([time_series[t - timesteps: t] for t in range(timesteps, len(time_series) + timesteps, timesteps)])
     return sequences
 
 
