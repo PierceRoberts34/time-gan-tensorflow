@@ -1,5 +1,7 @@
 # TimeGAN TensorFlow
 
+This fork is designed to improve compatibility with Colab
+
 ![license](https://img.shields.io/github/license/flaviagiammarino/time-gan-tensorflow)
 ![languages](https://img.shields.io/github/languages/top/flaviagiammarino/time-gan-tensorflow)
 ![stars](https://img.shields.io/github/stars/flaviagiammarino/time-gan-tensorflow)
